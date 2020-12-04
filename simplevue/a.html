@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h3>{{ msg }}</h3>
+    <h3>{{ count }}</h3>
+    <div v-text="msg"></div>
+    <input type="text" v-model="msg">
+    <input type="text" v-model="count">
+    <div v-html="htmlTmp"></div>
+    <button v-on:click="clickHandler">click me</button>
+  </div>
+  <script src="./dep.js"></script>
+  <script src="./watcher.js"></script>
+  <script src="./compiler.js"></script>
+  <script src="./observer.js"></script>
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'sdfgdfgfd',
+        count: 100,
+        person: {
+          name: 'ls'
+        },
+        htmlTmp: `<div style="background-color: yellow"><span style="color: #e4393c">hello</span></div>`
+      },
+      methods: {
+        clickHandler () {
+          alert('hello world')
+        }
+      }
+    })
+    // vm.msg = {
+    //   gf: 'rerw'
+    // }
+  </script>
+</body>
+</html>
